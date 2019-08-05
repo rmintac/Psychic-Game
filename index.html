@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="game"> </div>
+    <h1>Psychic Game</h1>
+
+
+    <script type="text/javascript">
+
+        var play = confirm("Do you want to play a game?");
+
+        if (play) {
+            alert("Let's see if you can read my mind");
+        }
+        else {
+            alert("You're going to play anyways MUHAHAHAHAH");
+
+        }
+
+
+
+
+        var computerchoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        console.log(computerchoice);
+
+        var userguess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+
+
+
+        //assign a functino to the key//
+
+        document.onkeyup = function (event) {
+            var userguess = event.key;
+            alert(userguess);
+            
+
+        };
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
