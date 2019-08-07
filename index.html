@@ -10,7 +10,7 @@
 
 <body>
     <div id="game"> </div>
-    <h1>Psychic Game</h1>
+    <h1 id="test">Psychic Game</h1>
 
 
     <script type="text/javascript">
@@ -26,24 +26,28 @@
         }
 
 
+        var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        console.log(computerChoice);
 
+        var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-        var computerchoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        console.log(computerchoice);
-
-        var userguess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-
-
-        //assign a functino to the key//
-
+        var h1 = document.getElementById('test')
         document.onkeyup = function (event) {
-            var userguess = event.key;
-            alert(userguess);
-            
 
-        };
+            console.log('hi you pressed: ', event.key);
+
+            var computerGuess = computerChoice[math.floor(math.random() * options.length)];
+            console.log(computerGuess);
+        }
+
+
+
+        //document.onkeyup = function (event) {
+           // var userguess = event.key;
+            //alert("User Guess: " + userguess);
+
+
+
 
 
 
