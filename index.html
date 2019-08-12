@@ -9,55 +9,32 @@
 </head>
 
 <body>
-    <div id="game"> </div>
+<div id="game"> 
     <h1 id="test">Psychic Game</h1>
+</div>
+
+<div id="guess">
+    <h2>Guess the letter I am thinking:</h2>
+</div>
+
+<div id="wins">
+    <h3>Wins:</h3>
+</div>
+
+<div id="lost">
+    <h3>Losses:</h3>
+</div>
+
+<div id="Guess">
+    <h3>Guesses left:</h3>
+</div>
+
+<div id="Guesses">
+    <h3>Your guesses:</h3>
+</div>
 
 
-    <script type="text/javascript">
-
-        var play = confirm("Do you want to play a game?");
-
-        if (play) {
-            alert("Let's see if you can read my mind");
-        }
-        else {
-            alert("You're going to play anyways MUHAHAHAHAH");
-
-        }
-
-
-        var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        console.log(computerChoice);
-
-        var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-        var h1 = document.getElementById('test')
-        document.onkeyup = function (event) {
-
-            console.log('hi you pressed: ', event.key);
-
-            var computerGuess = computerChoice[math.floor(math.random() * options.length)];
-            console.log(computerGuess);
-        }
-
-
-
-        //document.onkeyup = function (event) {
-           // var userguess = event.key;
-            //alert("User Guess: " + userguess);
-
-
-
-
-
-
-
-
-
-
-
-    </script>
-
+<script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
