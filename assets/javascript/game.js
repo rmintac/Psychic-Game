@@ -36,3 +36,4 @@ document.onkeyup = function (event) {
  guessesLeftPlayer.innerHTML = "Guesses Left: " + guessesLeft;
  guessesRemaining.innerHTML = "Your Guesses So Far: " + guessesSoFar;
 }
+
