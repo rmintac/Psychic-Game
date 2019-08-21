@@ -1,39 +1,56 @@
-
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+var letterGuess = "";
 var wins = 0;
-var losses = 0;
+var loss = 0;
 var guessesLeft = 9;
 var guessesSoFar = [];
-var winsPlayer = document.getElementById("wins");
-var lossesPlayer = document.getElementById("losses");
-var guessesLeftPlayer = document.getElementById("guesses-left");
-var guessesRemaining = document.getElementById("guesses-so-far");
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-console.log(computerGuess);
+var winLetter = "";
+
+
+
+var h1 = document.getElementById('computerChoice')
 document.onkeyup = function (event) {
- var userGuess = event.key;
- // console.log(userGuess);
- guessesLeft--;
- guessesSoFar.push(userGuess);
- console.log(guessesLeft);
- if (userGuess === computerGuess) {
-   wins++;
-   guessesLeft = 9;
-   guessesSoFar = [];
-   computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-   console.log(computerGuess);
- } else if (guessesLeft === 0) {
-   alert("Game Over");
-   guessesLeft = 9;
-   guessesSoFar= [];
-   console.log(guessesSoFar);
-   losses++;
-   computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-   console.log(computerGuess);
- }
- winsPlayer.innerHTML = "Wins: " + wins;
- lossesPlayer.innerHTML = "Losses: " + losses;
- guessesLeftPlayer.innerHTML = "Guesses Left: " + guessesLeft;
- guessesRemaining.innerHTML = "Your Guesses So Far: " + guessesSoFar;
+
+    console.log('Player Guess ', event.key);
+
+    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+    console.log(computerGuess);
 }
 
+function updateScreen() {
+  var winsPlayer = document.getElementById("wins");
+  var lossesPlayer = document.getElementById("loss");
+  var guessesLeftPlayer = document.getElementById("guessesLeft");
+  var guessesRemaining = document.getElementById("guessesLeft");
+
+  winsPlayer.textContent = "Wins:" + wins;
+  lossesPlayer.textContent = "Losses:" + loss;
+  guessesLeftPlayer.textContent = "guessesLeft:" + guessesLeft;
+  guessesRemaining.textContent = "guessesSoFar:" + guessesSoFar;
+
+  if (letterGuess == winLetter){
+    wins = wins + 1;
+    winLetter = computerChoice[Math.floor(Math.random() * 26)];
+    guessesLeft = 9;
+    letterGuess = "";
+    alert (" You won by pressing the mystery letter!")
+  }
+  else if (guessesSoFar != winLetter && guessesLeft > 1 ) {
+    guessesLeft = guessesleft - 1;
+    letterGuess = letterGuess + guessesSoFar + 
+  }
+
+else if (guessesSoFar != winLetter && guessesLeft == 1) {
+  loss = loss + 1;
+  winLetter = computerChoice[Math.floor(Math.random() * 26];
+
+  guessesLeft = 9;
+  lettersPicked = "";
+  alert ( "You lost")};
+
+updatesScreen();
+console.log("win" + wins);
+console.log("Loss" + loss);
+console.log("Guesses Left:" + guessesLeft);
+console.log("So Far:" +letterGuess);
+};
