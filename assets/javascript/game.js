@@ -6,29 +6,32 @@ var guessesLeft = 9;
 var guessesSoFar = [];
 var winLetter = "";
 
+var computerGuess = computerChoice[Math.floor(Math.random() + computerChoice.length)];
 
-
-var h1 = document.getElementById('computerChoice')
 document.onkeyup = function (event) {
 
     console.log('Player Guess ', event.key);
 
-    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+    
     console.log(computerGuess);
+
+    var current = event.key
 }
 
 function updateScreen() {
-  var winsPlayer = document.getElementById("wins");
-  var lossesPlayer = document.getElementById("loss");
-  var guessesLeftPlayer = document.getElementById("guessesLeft");
-  var guessesRemaining = document.getElementById("guessesLeft");
+   winsPlayer = document.getElementById("wins");
+   lossesPlayer = document.getElementById("loss");
+   guessesLeftPlayer = document.getElementById("guessesLeft");
+   guessesRemaining = document.getElementById("guessesLeft");
 
-  winsPlayer.textContent = "Wins:" + wins;
-  lossesPlayer.textContent = "Losses:" + loss;
-  guessesLeftPlayer.textContent = "guessesLeft:" + guessesLeft;
-  guessesRemaining.textContent = "guessesSoFar:" + guessesSoFar;
+  //notes on notebook
 
-  if (letterGuess == winLetter){
+  
+  
+  
+  
+  //goes inside on key up
+  if (computerGuess === current){
     wins = wins + 1;
     winLetter = computerChoice[Math.floor(Math.random() * 26)];
     guessesLeft = 9;
@@ -38,7 +41,7 @@ function updateScreen() {
   else if (guessesSoFar != winLetter && guessesLeft > 1 ) {
     guessesLeft = guessesleft - 1;
     letterGuess = letterGuess + guessesSoFar + 
-  }
+}
 
 else if (guessesSoFar != winLetter && guessesLeft == 1) {
   loss = loss + 1;
@@ -48,7 +51,10 @@ else if (guessesSoFar != winLetter && guessesLeft == 1) {
   lettersPicked = "";
   alert ( "You lost")};
 
-updatesScreen();
+
+
+//needs to be called outside on key
+  updatesScreen();
 console.log("win" + wins);
 console.log("Loss" + loss);
 console.log("Guesses Left:" + guessesLeft);
